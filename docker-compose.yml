@@ -1,0 +1,11 @@
+services:
+  infodept:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-development-only-change-me}
+    volumes:
+      - infodept-data:/app/instance
+volumes:
+  infodept-data:
